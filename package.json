@@ -1,0 +1,15 @@
+{
+  "name": "bankend_practice",
+  "version": "1.0.0",
+  "description": "Learning Bankend concept form Lacture and personal Knowledge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Abuzar_ALi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

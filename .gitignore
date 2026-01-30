@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# IDEs and editors
+.idea/         # JetBrains IDEs (IntelliJ, WebStorm, etc.)
+.vscode/       # VS Code
+.sublime-project
+.sublime-workspace
+
+# Build and temporary files
+/build
+/dist
+/tmp
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Uploads and logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+testem.json
+junit.xml
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Optional: if using Docker
+# .dockerignore usually handles this, but including here doesn't hurt
+# Dockerfile*.swarm
+# *.stack
+
+# Optional: TypeScript v4+ build artifacts
+# *.tsbuildinfo
+
+# Optional: Testing and coverage
+coverage
+.nyc_output
+
+# Optional: if using Webpack/Babel for build process
+# manifest.json
+# version-manifest.json
