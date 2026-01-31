@@ -1,4 +1,4 @@
-import { User } from "../models/users.model";
+import { User } from "../models/users.model.js";
 
 const userRegister = async (req , res) => {
     const {userName , password , email} = req.body();
