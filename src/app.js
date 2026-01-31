@@ -3,7 +3,10 @@ import userRouter from "./routes/user.route.js";
 
 const app = express();
 
-
+// A simple test route to check if server is working
+app.get('/', (req, res) => {
+  res.send('Server is ready! 🚀');
+});
 // routes declaration
 
 app.use('api/v1/users' , userRouter);
