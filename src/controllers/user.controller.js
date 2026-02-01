@@ -39,7 +39,7 @@ const userRegister = async (req , res) => {
 
 
 
-const userLogin = async(res , req)=>{
+const userLogin = async(req , res)=>{
     try {
         const {email , password} = req.body;
 
