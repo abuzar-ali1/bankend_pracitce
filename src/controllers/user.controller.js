@@ -39,6 +39,25 @@ const userRegister = async (req , res) => {
 
 
 
+const userLogin = async(res , req)=>{
+    try {
+        const {email , password} = req.body;
+
+        const user = await User.findOne({
+            email : email.toLowerCase(),
+        })
+
+        if(!user) return res.status(400).json({
+            message : "User Not found!"
+        })
+
+
+    } catch (error) {
+        
+    }
+}
+
+
 
 export {
     userRegister
