@@ -52,7 +52,7 @@ const userLogin = async(res , req)=>{
         })
 
         const isMatch = await user.comparePassword(password) 
-        if(!isMatch) return status(400).json({
+        if(!isMatch) return res.status(400).json({
             message : "Invalid User details not in the database",
             user : {
                 id : user._id,
