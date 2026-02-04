@@ -12,6 +12,7 @@ app.use(express.urlencoded());
 app.get('/', (req, res) => {
   res.send('Server is ready! 🚀');
 });
+
  
   
 // routes declaration
