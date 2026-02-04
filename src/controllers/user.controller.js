@@ -1,14 +1,14 @@
 import { User } from "../models/users.model.js";
 
 const userRegister = async (req , res) => {
-    const {userName , password , email} = req.body;
+    const {username , password , email} = req.body;
 
     try {
         
 
         // basic Validation
 
-        if(!userName || !email || !password){
+        if(!username || !email || !password){
             return res.status(400).json({message : "All fields are Required!"})
         }
 
@@ -23,14 +23,14 @@ const userRegister = async (req , res) => {
         // create  user
 
         const user = User.create({
-            userName,
+            username,
             password,
             email : email.toLowerCase(),
             loggedIn : false,
         })
         res.status(201).json({
             message : "User regestered succesfully !",
-            user : {id : user._id , email : user.email , userName : user.userName}
+            user : {id : user._id , email : user.email , username : user.username}
         })
     } catch (error) {
         res.status(500).json({message : "Some thing went wrong try again!" , error : error.message})
@@ -56,7 +56,7 @@ const userLogin = async(req , res)=>{
             message : "Invalid User details not in the database",
             user : {
                 id : user._id,
-                userName : user.userName,
+                username : user.username,
                 email : user.email,
             }
         })
