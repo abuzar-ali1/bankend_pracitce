@@ -26,7 +26,6 @@ const userRegister = async (req , res) => {
             username,
             password,
             email : email.toLowerCase(),
-            loggedIn : false,
         })
         res.status(201).json({
             message : "User regestered succesfully !",
@@ -61,6 +60,14 @@ const userLogin = async(req , res)=>{
             }
         })
 
+        res.status(200).json({
+            message : "User logged in successfully",
+            user : {
+                id : user._id,
+                username : user.username,
+                email : user.email,
+            }
+        })
     } catch (error) {
 
         res.status(500).json({
