@@ -80,29 +80,17 @@ const userLogin = async(req , res)=>{
 
 const userLogout = async (req , res)=>{
     try {
-        const {email , password} = req.body;
+        const {email} = req.body;
         const user = await User.findOne({email : email.toLowerCase()});
 
-        const isMatch = await user.comparePassword(password); 
-        if(!isMatch) return res.status(400).json({
-            message : "Invalid User details not in the database",
+        if(!user) return res.status(400).json({
+            message : "User Not found!"
         })
 
         res.status(200).json({
             message : "User logged out successfully",
         })
 
-    res.status(200).json({
-            message : "User logged out in successfully",
-            user : {
-                id : user._id,
-                username : user.username,
-                email : user.email,
-            }
-        })
-
-        
-        
     } catch (error) {
     
         res.status(500).json({
@@ -114,6 +102,7 @@ const userLogout = async (req , res)=>{
 
 export {
     userRegister,
-    userLogin    
+    userLogin,
+    userLogout    
 
 }
