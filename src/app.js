@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   res.send('Server is ready! 🚀');
 });
 
-
+  
 // routes declaration
 
 app.use('/api/v1/users' , userRouter);
