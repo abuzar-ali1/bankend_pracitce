@@ -1,6 +1,6 @@
 import { Post } from "../models/posts.models.js";
 
-const registerPost = async (res , req) =>{
+const registerPost = async (req , res) =>{
     const {name , description , age} = req.body; 
     try {
 
@@ -9,14 +9,14 @@ const registerPost = async (res , req) =>{
                 }        
                 // create  post
         
-                const post = Post.create({
+                const post = await Post.create({
                     name,
                     description,
                     age
                 })
                 res.status(201).json({
                     message : "Post regestered succesfully !",
-                    post : {id : user._id  , name : post.name ,  description : post.description , age : post.age}
+                    post : {id : post._id  , name : post.name ,  description : post.description , age : post.age}
                 })
     } catch (error) {
         res.status(500).json({
@@ -24,6 +24,8 @@ const registerPost = async (res , req) =>{
         })
     }
 }
+
+
 
 
 export {
