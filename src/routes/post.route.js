@@ -1,11 +1,10 @@
 import { Router } from "express";
-import postSchema from "../models/posts.models";
-import { registerPost } from "../controllers/post.controller";
+import { registerPost } from "../controllers/post.controller.js";
 
 
 const router = Router();
 
-router.route('register').post(registerPost);
+router.route('/register').post(registerPost);
 
 
 export default router;

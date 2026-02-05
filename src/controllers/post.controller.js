@@ -1,4 +1,4 @@
-import { Post } from "../models/posts.models";
+import { Post } from "../models/posts.models.js";
 
 const registerPost = async (res , req) =>{
     const {name , description , age} = req.body; 
@@ -16,7 +16,7 @@ const registerPost = async (res , req) =>{
                 })
                 res.status(201).json({
                     message : "Post regestered succesfully !",
-                    post : {id : user._id , description : post.description , name : post.name , age : post.age}
+                    post : {id : user._id  , name : post.name ,  description : post.description , age : post.age}
                 })
     } catch (error) {
         res.status(500).json({
