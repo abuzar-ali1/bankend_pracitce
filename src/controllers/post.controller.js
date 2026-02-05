@@ -19,6 +19,13 @@ const registerPost = async (res , req) =>{
                     post : {id : user._id , description : post.description , name : post.name , age : post.age}
                 })
     } catch (error) {
-        
+        res.status(500).json({
+            message : "Internal Server Error ",
+        })
     }
+}
+
+
+export {
+    registerPost,
 }
