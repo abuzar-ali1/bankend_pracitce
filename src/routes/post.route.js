@@ -7,5 +7,5 @@ const router = Router();
 router.route('/register').post(registerPost);
 router.route('/delete').post(deletePost);
 router.route('/').get(getPosts);
-// router.route('./update:id').patch(updatePost);
+router.route('/update/:id').patch(updatePost);
 export default router;

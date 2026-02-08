@@ -69,10 +69,37 @@ const getPosts = async (req , res) => {
     }
 }
 
+const updatePost = async (req , res) => {
+
+    try {
+        if (Object.keys(req.body).length === 0) {
+           return res.status(400).json({
+                message : "All fields are required "
+            })
+        }
+
+        const post = await Post.findByIdAndUpdate(req.params.id , req.body,  { new : true });
+        if(!post){
+            return res.status(400).json({
+                message : "Post not Found"
+            })
+        }
+
+        return res.status(200).json({
+            message: "Post updated successfully",
+            data: post
+        });
+
+    } catch (error) {
+        res.status(500).json({
+                message : "Internal Server Error"
+        })
+    }
+}
 
 export {
     registerPost,
     deletePost,
     getPosts,
-
+    updatePost,
 }
