@@ -81,7 +81,7 @@ const updatePost = async (req , res) => {
         const post = await Post.findByIdAndUpdate(req.params.id , req.body,  { new : true });
         if(!post){
             return res.status(400).json({
-                message : "Post not Found"
+                message : "Post Not Found"
             })
         }
 
